@@ -1,0 +1,14 @@
+var majorityElement = function(nums) {
+    let obj = {};
+
+    for(let val of nums){
+        obj[val] = (obj[val] || 0) +1;
+    }
+
+    for(let key in obj){
+        let max = Math.max(...Object.values(obj))
+        if(obj[key] ===max) return key        
+    }
+    return null;
+
+};
