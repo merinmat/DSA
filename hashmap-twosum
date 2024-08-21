@@ -1,0 +1,18 @@
+function twoSum(nums,target){
+    const numsMap = {};
+
+    for(let i=0;i<nums.length;i++){
+        const currentMapVal = numsMap[nums[i]];
+        if(currentMapVal>=0){
+            return [currentMapVal,i];
+        }
+
+        else {
+             const numberToFind = target - nums[i];
+            numsMap[numberToFind] = i;
+        }
+    }
+    return null
+}
+
+twoSum([1,2],4)
